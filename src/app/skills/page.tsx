@@ -1,150 +1,147 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FaCode, FaDatabase, FaCloud } from 'react-icons/fa'
+import { Reveal } from '@/components/Reveal'
 import {
-  SiDjango, SiFlask, SiFastapi, SiPostgresql, SiMongodb, SiDocker,
-  SiAmazon, SiRedis, SiNginx, SiCelery, SiRabbitmq, SiPython,
-  SiTypescript,
+  FaPython, FaNodeJs, FaReact, FaDocker, FaAws, FaGitAlt, FaLinux, FaDatabase,
+  FaCode, FaServer, FaTools, FaCloud, FaProjectDiagram,
+} from 'react-icons/fa'
+import {
+  SiDjango, SiFlask, SiFastapi, SiPostgresql, SiMongodb, SiRedis,
+  SiNginx, SiCelery, SiRabbitmq, SiTypescript, SiJavascript,
+  SiNextdotjs, SiTailwindcss, SiGraphql, SiPytest, SiSqlite,
+  SiMysql, SiElasticsearch, SiGithubactions, SiLinux, SiDart,
+  SiExpress, SiSelenium, SiCss3, SiHtml5, SiBootstrap,
 } from 'react-icons/si'
 
-const skillCategories = [
-  {
-    title: 'Backend Development',
-    icon: FaCode,
-    gradient: 'from-blue-500 to-blue-700',
-    skills: [
-      { name: 'Python', level: 95, icon: SiPython },
-      { name: 'Django', level: 90, icon: SiDjango },
-      { name: 'Flask', level: 88, icon: SiFlask },
-      { name: 'FastAPI', level: 85, icon: SiFastapi },
-      { name: 'TypeScript', level: 75, icon: SiTypescript },
-    ],
-  },
-  {
-    title: 'Database & DevOps',
-    icon: FaDatabase,
-    gradient: 'from-green-500 to-green-700',
-    skills: [
-      { name: 'PostgreSQL', level: 85, icon: SiPostgresql },
-      { name: 'MongoDB', level: 80, icon: SiMongodb },
-      { name: 'Redis', level: 75, icon: SiRedis },
-      { name: 'Docker', level: 80, icon: SiDocker },
-      { name: 'AWS', level: 70, icon: SiAmazon },
-    ],
-  },
-  {
-    title: 'Tools & Infrastructure',
-    icon: FaCloud,
-    gradient: 'from-purple-500 to-purple-700',
-    skills: [
-      { name: 'Git', level: 90, icon: FaCode },
-      { name: 'Nginx', level: 70, icon: SiNginx },
-      { name: 'CI/CD', level: 75, icon: FaCloud },
-      { name: 'Celery', level: 72, icon: SiCelery },
-      { name: 'RabbitMQ', level: 68, icon: SiRabbitmq },
-    ],
-  },
-]
+interface Skill {
+  name: string
+  icon: React.ComponentType<{ size?: number; className?: string }>
+}
 
-const additionalSkills = [
-  'RESTful APIs', 'GraphQL', 'Unit Testing', 'Agile/Scrum',
-  'System Design', 'Microservices', 'Machine Learning',
-  'Data Structures', 'Algorithms', 'GitHub Actions',
+interface Category {
+  title: string
+  icon: React.ComponentType<{ size?: number; className?: string }>
+  skills: Skill[]
+}
+
+const categories: Category[] = [
+  {
+    title: 'Languages',
+    icon: FaCode,
+    skills: [
+      { name: 'Python', icon: FaPython },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'Dart', icon: SiDart },
+      { name: 'SQL', icon: FaDatabase },
+      { name: 'Bash', icon: SiLinux },
+    ],
+  },
+  {
+    title: 'Backend',
+    icon: FaServer,
+    skills: [
+      { name: 'Django', icon: SiDjango },
+      { name: 'FastAPI', icon: SiFastapi },
+      { name: 'Flask', icon: SiFlask },
+      { name: 'Node.js', icon: FaNodeJs },
+      { name: 'Express', icon: SiExpress },
+      { name: 'REST APIs', icon: FaProjectDiagram },
+      { name: 'GraphQL', icon: SiGraphql },
+      { name: 'Celery', icon: SiCelery },
+      { name: 'RabbitMQ', icon: SiRabbitmq },
+      { name: 'WebSockets', icon: FaCode },
+    ],
+  },
+  {
+    title: 'Databases',
+    icon: FaDatabase,
+    skills: [
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'SQLite', icon: SiSqlite },
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'Redis', icon: SiRedis },
+      { name: 'Elasticsearch', icon: SiElasticsearch },
+    ],
+  },
+  {
+    title: 'DevOps & Cloud',
+    icon: FaCloud,
+    skills: [
+      { name: 'Docker', icon: FaDocker },
+      { name: 'AWS', icon: FaAws },
+      { name: 'Nginx', icon: SiNginx },
+      { name: 'GitHub Actions', icon: SiGithubactions },
+      { name: 'Linux', icon: SiLinux },
+    ],
+  },
+  {
+    title: 'Frontend',
+    icon: FaReact,
+    skills: [
+      { name: 'React', icon: FaReact },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      { name: 'Bootstrap', icon: SiBootstrap },
+      { name: 'HTML', icon: SiHtml5 },
+      { name: 'CSS', icon: SiCss3 },
+    ],
+  },
+  {
+    title: 'Tools & Testing',
+    icon: FaTools,
+    skills: [
+      { name: 'Git', icon: FaGitAlt },
+      { name: 'pytest', icon: SiPytest },
+      { name: 'Selenium', icon: SiSelenium },
+      { name: 'CI/CD', icon: FaCloud },
+      { name: 'Agile/Scrum', icon: FaCode },
+    ],
+  },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="min-h-screen py-32 bg-darker relative">
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="text-secondary font-medium text-sm uppercase tracking-wider">What I Do</span>
-          <h1 className="text-4xl md:text-5xl font-bold mt-4">
-            Technical <span className="text-secondary">Skills</span>
-          </h1>
-        </motion.div>
+    <section className="min-h-screen pt-28 pb-24">
+      <div className="mx-auto px-6 max-w-7xl">
+        <Reveal>
+          <div className="max-w-3xl mx-auto mb-16 text-center">
+            <p className="section-title">What I Do</p>
+            <h1 className="heading">
+              Technical <span className="text-primary">Skills</span>
+            </h1>
+            <p className="text-muted mt-4 text-sm max-w-md mx-auto">
+              {categories.reduce((acc, c) => acc + c.skills.length, 0)} technologies across {categories.length} categories
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={category.title}
-              className="group relative bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-white/5 hover:border-white/10 transition-all duration-500"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: catIndex * 0.1 }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`w-14 h-14 bg-gradient-to-br ${category.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
-                  <category.icon className="text-white" size={24} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {categories.map((category, i) => (
+            <Reveal key={category.title} delay={i * 60}>
+              <div className="bg-surface border border-border/50 rounded-xl p-5 h-full">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <category.icon className="text-primary" size={16} />
+                  </div>
+                  <h2 className="font-semibold text-sm">{category.title}</h2>
                 </div>
-                <div>
-                  <h2 className="text-xl font-semibold">{category.title}</h2>
-                  <p className="text-gray-400 text-sm">{category.skills.length} skills</p>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill.name}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-muted bg-[var(--bg)] border border-border/50"
+                    >
+                      <skill.icon size={12} />
+                      {skill.name}
+                    </span>
+                  ))}
                 </div>
               </div>
-
-              <div className="space-y-5">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center">
-                          <skill.icon className="text-primary" size={14} />
-                        </div>
-                        <span className="text-gray-300 font-medium">{skill.name}</span>
-                      </div>
-                      <span className="text-primary font-semibold">{skill.level}%</span>
-                    </div>
-                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-primary rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, ease: 'easeOut', delay: catIndex * 0.1 + skillIndex * 0.06 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient}/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
-            </motion.div>
+            </Reveal>
           ))}
         </div>
-
-        <motion.div
-          className="mt-16 p-8 bg-card/30 backdrop-blur-sm rounded-3xl border border-white/5"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h3 className="text-xl font-semibold mb-6 text-center">Additional Technologies</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {additionalSkills.map((skill, index) => (
-              <motion.span
-                key={skill}
-                className="px-5 py-2.5 bg-white/5 rounded-full text-gray-300 text-sm border border-white/10 hover:border-primary/50 hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 + index * 0.03 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )

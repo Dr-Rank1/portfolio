@@ -8,20 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#5B8DEF',
-        secondary: '#A78BFA',
-        dark: '#08090F',
-        darker: '#050609',
-        card: '#0E1018',
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
+        primary: 'var(--primary)',
+        'primary-dark': 'var(--primary-dark)',
+        secondary: 'var(--secondary)',
+        accent: 'var(--accent)',
+        dark: 'var(--bg)',
+        darker: 'var(--bg-darker)',
+        surface: 'var(--surface)',
+        card: 'var(--card)',
+        border: 'var(--border)',
+        muted: 'var(--muted)',
+        foreground: 'var(--foreground)',
       },
     },
   },

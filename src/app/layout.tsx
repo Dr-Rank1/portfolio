@@ -1,23 +1,22 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
-import { AnimatedBackground } from '@/components/AnimatedBackground'
-import { GridPattern } from '@/components/GridPattern'
+import { SpotifyWidget } from '@/components/SpotifyWidget'
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Ian Gicheha Mbae | Python Software Developer',
-  description: 'Portfolio of Ian Gicheha Mbae - Python Software Developer and Computer Science student',
+  title: 'Ian Gicheha Mbae | Python Developer',
+  description: 'Backend developer building scalable APIs and web applications with Python, Django, and FastAPI.',
   openGraph: {
-    title: 'Ian Gicheha Mbae | Python Software Developer',
-    description: 'Portfolio of Ian Gicheha Mbae - Python Software Developer and Computer Science student',
+    title: 'Ian Gicheha Mbae | Python Developer',
+    description: 'Backend developer building scalable APIs and web applications with Python, Django, and FastAPI.',
     type: 'website',
     images: [{ url: '/photo.png', width: 576, height: 1312, alt: 'Ian Gicheha Mbae' }],
   },
@@ -29,13 +28,32 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.className} bg-dark text-white overflow-x-hidden`}>
-        <AnimatedBackground />
-        <GridPattern />
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (!theme) {
+                    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                  }
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        <div className="fixed inset-0 bg-gradient-to-b from-primary/[0.02] to-transparent pointer-events-none" />
         <Navigation />
-        {children}
+        <main className="relative z-10">
+          {children}
+        </main>
         <Footer />
+        <SpotifyWidget />
       </body>
     </html>
   )
