@@ -7,16 +7,35 @@ import { SpotifyWidget } from '@/components/SpotifyWidget'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Ian Gicheha Mbae | Python Developer',
-  description: 'Backend developer building scalable APIs and web applications with Python, Django, and FastAPI.',
+  metadataBase: new URL('https://portfolio-mauve-phi-56.vercel.app'),
+  title: 'Ian Gicheha Mbae | Software Engineer (Python, Android, Flutter)',
+  description:
+    'Software Engineer based in Nairobi building scalable backend architectures with Python, Django, & FastAPI, and tactile native mobile apps with Android (Jetpack Compose) & Flutter.',
+  keywords: [
+    'Ian Gicheha Mbae',
+    'Ian Mbae',
+    'Python Developer',
+    'Android Developer',
+    'Kotlin',
+    'Jetpack Compose',
+    'Flutter',
+    'Django',
+    'FastAPI',
+    'TypeScript',
+    'Next.js',
+    'Software Engineer Nairobi',
+    'Kenya Software Engineer',
+  ],
+  authors: [{ name: 'Ian Gicheha Mbae' }],
   openGraph: {
-    title: 'Ian Gicheha Mbae | Python Developer',
-    description: 'Backend developer building scalable APIs and web applications with Python, Django, and FastAPI.',
+    title: 'Ian Gicheha Mbae | Software Engineer',
+    description:
+      'Building scalable backend systems and high-craft mobile apps with Python, Kotlin (Compose), Flutter, and TypeScript.',
     type: 'website',
     images: [{ url: '/photo.png', width: 576, height: 1312, alt: 'Ian Gicheha Mbae' }],
   },
@@ -47,11 +66,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
-        <div className="fixed inset-0 bg-gradient-to-b from-primary/[0.02] to-transparent pointer-events-none" />
+        <div className="fixed inset-0 bg-gradient-to-b from-primary/[0.03] via-transparent to-transparent pointer-events-none" />
         <Navigation />
-        <main className="relative z-10">
-          {children}
-        </main>
+        <main className="relative z-10">{children}</main>
         <Footer />
         <SpotifyWidget />
       </body>

@@ -1,15 +1,50 @@
 'use client'
 
 import Image from 'next/image'
-import { FaGithub, FaDatabase, FaGraduationCap } from 'react-icons/fa'
-import { SiPython, SiReact } from 'react-icons/si'
+import Link from 'next/link'
+import {
+  FaGithub,
+  FaDatabase,
+  FaGraduationCap,
+  FaGooglePlay,
+  FaMobileAlt,
+  FaServer,
+  FaBriefcase,
+  FaCheck,
+} from 'react-icons/fa'
+import { SiPython, SiReact, SiKotlin, SiFlutter } from 'react-icons/si'
 import { Reveal } from '@/components/Reveal'
 
 const highlights = [
-  { title: 'Backend Architecture', subtitle: 'Scalable API Design', icon: FaGraduationCap },
-  { title: 'Python Development', subtitle: 'Django · Flask · FastAPI', icon: SiPython },
-  { title: 'Web Development', subtitle: 'React · TypeScript', icon: SiReact },
-  { title: 'Database Design', subtitle: 'PostgreSQL · MongoDB', icon: FaDatabase },
+  {
+    title: 'Mobile Engineering',
+    subtitle: 'Native Android (Jetpack Compose) & Flutter',
+    icon: FaMobileAlt,
+  },
+  {
+    title: 'Backend Systems',
+    subtitle: 'Python, Django, FastAPI & RESTful APIs',
+    icon: FaServer,
+  },
+  {
+    title: 'Modern Web Apps',
+    subtitle: 'TypeScript, Next.js & Tailwind CSS',
+    icon: SiReact,
+  },
+  {
+    title: 'Database Architecture',
+    subtitle: 'PostgreSQL, SQLite, Room & Redis',
+    icon: FaDatabase,
+  },
+]
+
+const competencies = [
+  'Clean Architecture, MVVM & Modular Codebases',
+  'Offline-First App Design & SQLite / Room State Storage',
+  'RESTful & Asynchronous API Design (FastAPI, Django REST Framework)',
+  'On-Device Processing (AI Background Cutouts, FFmpeg, Image Manipulation)',
+  'Payment & Verification Integrations (M-Pesa, KRA APIs, WhatsApp Business)',
+  'End-to-End Publishing Pipeline on Google Play Console',
 ]
 
 export default function About() {
@@ -17,108 +52,156 @@ export default function About() {
     <section className="min-h-screen pt-28 pb-24">
       <div className="mx-auto px-6 max-w-7xl">
         <Reveal>
-          <div className="max-w-3xl mx-auto mb-16">
+          <div className="max-w-3xl mx-auto mb-14 text-center">
             <p className="section-title">About Me</p>
             <h1 className="heading text-balance">
-              Building things that <span className="text-primary">matter</span>
+              Building Software that is <span className="text-primary">Reliable, Fast &amp; Thoughtful</span>
             </h1>
+            <p className="text-muted mt-3 text-sm md:text-base leading-relaxed">
+              Software Engineer based in Nairobi with over 4 years of hands-on experience building systems from ground up.
+            </p>
           </div>
         </Reveal>
 
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Left — photo + info */}
           <Reveal delay={100} className="lg:col-span-2">
-          <div className="space-y-4">
-            <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-2xl overflow-hidden border border-border/50">
-              <Image
-                src="/photo.png"
-                alt="Ian Gicheha Mbae"
-                fill
-                className="object-cover object-top"
-                priority
-              />
-            </div>
-
-            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface border border-border/50">
-              <FaGithub className="text-primary shrink-0" size={16} />
-              <div className="text-sm">
-                <p className="font-medium">@stewiriffin</p>
-                <p className="text-muted">github.com/stewiriffin</p>
+            <div className="space-y-4">
+              <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-2xl overflow-hidden border border-border/70 shadow-lg bg-surface">
+                <Image
+                  src="/photo.png"
+                  alt="Ian Gicheha Mbae"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
-              <a
-                href="https://github.com/stewiriffin"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto text-xs text-primary hover:text-secondary transition-colors"
-              >
-                View Profile
-              </a>
+
+              {/* GitHub Card */}
+              <div className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-surface border border-border/60">
+                <FaGithub className="text-primary shrink-0" size={18} />
+                <div className="text-sm">
+                  <p className="font-semibold text-foreground">@Dr-Rank1</p>
+                  <p className="text-muted text-xs">github.com/Dr-Rank1</p>
+                </div>
+                <a
+                  href="https://github.com/Dr-Rank1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto text-xs px-3 py-1 bg-dark rounded-md border border-border/50 text-primary hover:text-foreground transition-colors font-medium"
+                >
+                  View Profile
+                </a>
+              </div>
+
+              {/* Google Play Card */}
+              <div className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-surface border border-border/60">
+                <FaGooglePlay className="text-emerald-500 shrink-0" size={16} />
+                <div className="text-sm">
+                  <p className="font-semibold text-foreground">Published Developer</p>
+                  <p className="text-muted text-xs">Google Play Store</p>
+                </div>
+                <a
+                  href="https://play.google.com/store/apps/developer?id=Dr.+Rank"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto text-xs px-3 py-1 bg-dark rounded-md border border-border/50 text-emerald-500 hover:text-foreground transition-colors font-medium"
+                >
+                  Explore Apps
+                </a>
+              </div>
             </div>
-          </div>
           </Reveal>
 
           {/* Right — bio */}
           <Reveal delay={200} className="lg:col-span-3">
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">
-                Python Developer with 4 years of experience
-              </h2>
-              <div className="space-y-4 text-muted leading-relaxed">
-                <p>
-                  I&apos;m <span className="text-foreground font-medium">Ian Gicheha Mbae</span> —
-                  a backend developer focused on building clean, scalable APIs and web applications.
-                  I started coding at 16 and have been building ever since.
-                </p>
-                <p>
-                  My work centres on the Python ecosystem:{' '}
-                  <span className="text-foreground">Django</span>,{' '}
-                  <span className="text-foreground">FastAPI</span>, and{' '}
-                  <span className="text-foreground">Flask</span> for APIs, paired with{' '}
-                  <span className="text-foreground">PostgreSQL</span> and{' '}
-                  <span className="text-foreground">Redis</span> on the data layer, and{' '}
-                  <span className="text-foreground">Docker</span> for deployment.
-                  I care about code that is readable, testable, and built to last.
-                </p>
-                <p>
-                  Outside of work I contribute to open source, explore machine learning,
-                  and document everything I build on GitHub.
-                </p>
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-foreground">
+                  Full-Cycle Software Engineer with Passion for Craftsmanship
+                </h2>
+                <div className="space-y-4 text-muted text-sm sm:text-base leading-relaxed">
+                  <p>
+                    I&apos;m <span className="text-foreground font-semibold">Ian Gicheha Mbae</span>.
+                    I focus on the entire lifecycle of software delivery — designing resilient backend architectures, crafting seamless native user interfaces, and shipping finished applications to real users.
+                  </p>
+                  <p>
+                    On the mobile side, I build native Android applications with{' '}
+                    <span className="text-foreground font-medium">Kotlin and Jetpack Compose</span> (implementing tactile 2.5D physics, haptics, and clean MVVM patterns) as well as cross-platform mobile apps with{' '}
+                    <span className="text-foreground font-medium">Flutter and Dart</span> published on the Google Play Store.
+                  </p>
+                  <p>
+                    On the server and cloud side, I construct robust backend microservices with{' '}
+                    <span className="text-foreground font-medium">Python, FastAPI, and Django</span>, backed by{' '}
+                    <span className="text-foreground font-medium">PostgreSQL, Redis, and Docker</span>.
+                  </p>
+                  <p>
+                    Whether collaborating with engineering teams or owning a product end-to-end, my focus is always on writeable, testable, and maintainable systems that solve concrete problems.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              {highlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="p-4 rounded-xl bg-surface border border-border/50"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                      <item.icon className="text-primary" size={15} />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium leading-tight">{item.title}</p>
-                      <p className="text-xs text-muted mt-0.5">{item.subtitle}</p>
+              {/* Pillars */}
+              <div className="grid sm:grid-cols-2 gap-3.5">
+                {highlights.map((item) => (
+                  <div
+                    key={item.title}
+                    className="p-4 rounded-xl bg-surface border border-border/60 hover:border-primary/40 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                        <item.icon className="text-primary" size={16} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold text-foreground leading-tight">{item.title}</p>
+                        <p className="text-xs text-muted mt-0.5">{item.subtitle}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className="flex gap-8 pt-6 border-t border-border/50">
-              {[
-                { n: '4+', l: 'Years coding' },
-                { n: '24+', l: 'Repositories' },
-                { n: '15+', l: 'Projects shipped' },
-              ].map((s) => (
-                <div key={s.l}>
-                  <p className="text-2xl font-bold text-primary">{s.n}</p>
-                  <p className="text-xs text-muted mt-0.5">{s.l}</p>
+              {/* Engineering Competencies checklist */}
+              <div className="p-5 rounded-2xl bg-surface/60 border border-border/60 space-y-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-primary">
+                  Engineering Principles &amp; Practices
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-2.5">
+                  {competencies.map((comp) => (
+                    <div key={comp} className="flex items-start gap-2 text-xs text-muted">
+                      <FaCheck className="text-primary shrink-0 mt-0.5" size={10} />
+                      <span>{comp}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Stats Bar */}
+              <div className="flex flex-wrap gap-8 pt-6 border-t border-border/60">
+                {[
+                  { n: '4+', l: 'Years Experience' },
+                  { n: '30+', l: 'Active Repositories' },
+                  { n: '2', l: 'Live Play Store Apps' },
+                  { n: '100%', l: 'Clean Code Commitment' },
+                ].map((s) => (
+                  <div key={s.l}>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">{s.n}</p>
+                    <p className="text-xs text-muted mt-0.5">{s.l}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA button */}
+              <div className="pt-2">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark shadow-md shadow-primary/20 transition-all"
+                >
+                  <FaBriefcase size={12} />
+                  Discuss an Opportunity
+                </Link>
+              </div>
             </div>
-          </div>
           </Reveal>
         </div>
       </div>
