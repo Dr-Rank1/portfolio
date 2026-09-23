@@ -28,31 +28,44 @@ import { Reveal } from '@/components/Reveal'
 
 const flagshipPreview = [
   {
-    title: 'Wordle Tactile Edition',
-    subtitle: 'Native Android Puzzle Game',
-    desc: 'Jetpack Compose & Material 3 game with 2.5D extruded tactile tiles, gyroscope tilt parallax, and multi-board Dordle/Quordle engine.',
-    tech: ['Kotlin', 'Compose', 'Material 3'],
+    title: 'Quick PDF Manager',
+    subtitle: 'Published on Google Play',
+    desc: 'Lightweight offline PDF management & viewer built with Flutter. Clean document bookmarking, fast indexing, and storage optimization.',
+    tech: ['Flutter', 'Dart', 'Google Play'],
     link: '/projects',
-    github: 'https://github.com/Dr-Rank1/Wordle',
-    icon: FaAndroid,
+    playStore: 'https://play.google.com/store/apps/details?id=com.rank.quickpdf',
+    github: 'https://github.com/Dr-Rank1/quick-pdf',
+    icon: FaGooglePlay,
   },
   {
-    title: 'Make-CV Platform',
-    subtitle: 'Kenyan Career CV Builder',
-    desc: 'Privacy-first CV generator with real-time A4 rendering, local autosave state, profile photo tools, and vector PDF compilation.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind'],
+    title: 'QR & Barcode Scanner Pro',
+    subtitle: 'Published on Google Play',
+    desc: 'High-speed camera barcode and QR detection app built with Flutter. Instant flash toggle, history logging, and custom QR generation.',
+    tech: ['Flutter', 'CameraX', 'Google Play'],
     link: '/projects',
-    github: 'https://github.com/Dr-Rank1/Make-CV',
-    icon: FaCode,
+    playStore: 'https://play.google.com/store/apps/details?id=com.dr_rank.qrcodescanner',
+    github: 'https://github.com/Dr-Rank1/QR-app',
+    icon: FaGooglePlay,
   },
   {
-    title: 'Stikk WhatsApp Studio',
-    subtitle: 'Flutter Multimedia Tool',
-    desc: 'Sticker pack maker featuring on-device AI background removal, FFmpeg video cutouts, and Android WhatsApp intent linking.',
-    tech: ['Flutter', 'Dart', 'FFmpeg'],
+    title: 'TempBox — Disposable Temp Mail',
+    subtitle: 'Published on Google Play',
+    desc: 'Privacy-first instant temporary email client for Android. On-demand inbox provisioning, live auto-sync, and zero registration needed.',
+    tech: ['Kotlin', 'Android', 'Google Play'],
     link: '/projects',
-    github: 'https://github.com/Dr-Rank1/Sticker',
-    icon: FaMobileAlt,
+    playStore: 'https://play.google.com/store/apps/details?id=com.rank.tempbox',
+    github: 'https://github.com/Dr-Rank1/Temporary-email',
+    icon: FaGooglePlay,
+  },
+  {
+    title: 'Pazia — Quick Wallpaper HD & 4K',
+    subtitle: 'Published on Google Play',
+    desc: 'Production Android wallpaper app delivering curated 4K photography, one-tap home/lock screen setup, and local favorites.',
+    tech: ['Kotlin', 'Material You', 'Google Play'],
+    link: '/projects',
+    playStore: 'https://play.google.com/store/apps/details?id=com.rank.quickwallpaper',
+    github: 'https://github.com/Dr-Rank1/Quick-wallpaper',
+    icon: FaGooglePlay,
   },
 ]
 
@@ -231,11 +244,12 @@ export default function Home() {
           <Reveal>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
-                  Selected Work
+                <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-1 flex items-center gap-1.5">
+                  <FaGooglePlay size={12} />
+                  Live on Google Play Store
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                  Featured Applications &amp; Projects
+                  Published Mobile Applications
                 </h2>
               </div>
               <Link
@@ -249,57 +263,72 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={150}>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {flagshipPreview.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-surface border border-border/60 hover:border-primary/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 flex flex-col justify-between"
+                  className="bg-surface border border-border/60 hover:border-primary/50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                      <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
                         <item.icon size={18} />
                       </div>
-                      <a
-                        href={item.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg bg-dark text-muted hover:text-foreground border border-border/40 hover:border-border transition-colors"
-                        aria-label="GitHub Repository"
-                      >
-                        <FaGithub size={14} />
-                      </a>
+                      <div className="flex items-center gap-1.5">
+                        <a
+                          href={item.playStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                          title="View on Google Play"
+                          aria-label="Google Play Store"
+                        >
+                          <FaGooglePlay size={13} />
+                        </a>
+                        <a
+                          href={item.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-lg bg-dark text-muted hover:text-foreground border border-border/40 hover:border-border transition-colors"
+                          title="View on GitHub"
+                          aria-label="GitHub Repository"
+                        >
+                          <FaGithub size={13} />
+                        </a>
+                      </div>
                     </div>
 
-                    <h3 className="font-bold text-base text-foreground mb-1">
+                    <h3 className="font-bold text-sm text-foreground mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-medium text-primary mb-2.5">
+                    <p className="text-[11px] font-semibold text-cyan-400 mb-2">
                       {item.subtitle}
                     </p>
-                    <p className="text-xs text-muted leading-relaxed mb-4">
+                    <p className="text-xs text-muted leading-relaxed mb-4 line-clamp-3">
                       {item.desc}
                     </p>
                   </div>
 
                   <div className="pt-3 border-t border-border/40 flex items-center justify-between">
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1">
                       {item.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-2 py-0.5 rounded text-[10px] bg-dark text-muted font-mono border border-border/30"
+                          className="px-1.5 py-0.5 rounded text-[9px] bg-dark text-muted font-mono border border-border/30"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
-                    <Link
-                      href="/projects"
+                    <a
+                      href={item.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs font-semibold text-primary hover:underline flex items-center gap-1 shrink-0 ml-2"
                     >
-                      Details
+                      Install
                       <FaArrowRight size={9} />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               ))}

@@ -41,6 +41,60 @@ export interface ProjectItem {
 
 // Curated flagship projects that showcase real depth to hiring managers
 const curatedProjects: ProjectItem[] = [
+  // --- LIVE ON GOOGLE PLAY (PINNED TO TOP) ---
+  {
+    id: 'quick-pdf-playstore',
+    name: 'quick-pdf',
+    title: 'Quick PDF Manager',
+    description:
+      'Production document companion published on Google Play. Clean offline PDF viewing, bookmarking, file organization, and document export optimized for minimal memory footprint.',
+    category: 'Mobile',
+    language: 'Dart',
+    tags: ['Flutter', 'Google Play', 'Document Processing', 'Dart'],
+    githubUrl: 'https://github.com/Dr-Rank1/quick-pdf',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.rank.quickpdf',
+    featured: true,
+  },
+  {
+    id: 'qr-scanner-playstore',
+    name: 'QR-app',
+    title: 'QR & Barcode Scanner Pro',
+    description:
+      'Production Android & iOS application published on Google Play. Built with Flutter for millisecond camera barcode detection, custom QR design styling, history tracking, and instant sharing.',
+    category: 'Mobile',
+    language: 'Dart',
+    tags: ['Flutter', 'Google Play', 'CameraX', 'Dart', 'Material 3'],
+    githubUrl: 'https://github.com/Dr-Rank1/QR-app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dr_rank.qrcodescanner',
+    featured: true,
+  },
+  {
+    id: 'tempbox-playstore',
+    name: 'Temporary-email',
+    title: 'TempBox — Disposable Temp Mail',
+    description:
+      'Live disposable temporary email client published on Google Play. Instant inbox generation with zero registration, live auto-sync, push notifications, and private attachment handling.',
+    category: 'Mobile',
+    language: 'Kotlin',
+    tags: ['Android', 'Google Play', 'Kotlin', 'Coroutines', 'Privacy Tech'],
+    githubUrl: 'https://github.com/Dr-Rank1/Temporary-email',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.rank.tempbox',
+    featured: true,
+  },
+  {
+    id: 'quick-wallpaper-playstore',
+    name: 'Quick-wallpaper',
+    title: 'Pazia — Quick Wallpaper HD & 4K',
+    description:
+      'Production wallpaper personalization app published on Google Play. Delivers curated HD/4K photography, instant one-tap home/lock screen application, smart tagging, and local favorites.',
+    category: 'Mobile',
+    language: 'Kotlin',
+    tags: ['Android', 'Google Play', 'Material You', 'Kotlin', 'Pexels API'],
+    githubUrl: 'https://github.com/Dr-Rank1/Quick-wallpaper',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.rank.quickwallpaper',
+    featured: true,
+  },
+  // --- FLAGSHIP OPEN SOURCE & FULL-STACK ---
   {
     id: 'wordle-android',
     name: 'Wordle',
@@ -100,58 +154,6 @@ const curatedProjects: ProjectItem[] = [
     language: 'Python',
     tags: ['Python', 'FastAPI', 'WhatsApp API', 'Webhooks', 'AsyncIO'],
     githubUrl: 'https://github.com/Dr-Rank1/Whatsapp-business-automation',
-    featured: true,
-  },
-  {
-    id: 'qr-scanner-playstore',
-    name: 'QR-app',
-    title: 'QR & Barcode Scanner Pro',
-    description:
-      'Production Android & iOS application published on Google Play. Built with Flutter for millisecond camera barcode detection, custom QR design styling, history tracking, and instant sharing.',
-    category: 'Mobile',
-    language: 'Dart',
-    tags: ['Flutter', 'Google Play', 'CameraX', 'Dart', 'Material 3'],
-    githubUrl: 'https://github.com/Dr-Rank1/QR-app',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dr_rank.qrcodescanner',
-    featured: true,
-  },
-  {
-    id: 'quick-pdf-playstore',
-    name: 'quick-pdf',
-    title: 'Quick PDF Manager',
-    description:
-      'Lightweight document companion published on Google Play. Clean offline PDF viewing, bookmarking, file organization, and document export optimized for minimal memory footprint.',
-    category: 'Mobile',
-    language: 'Dart',
-    tags: ['Flutter', 'Google Play', 'Document Processing', 'Dart'],
-    githubUrl: 'https://github.com/Dr-Rank1/quick-pdf',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.rank.quickpdf',
-    featured: true,
-  },
-  {
-    id: 'quick-wallpaper-playstore',
-    name: 'Quick-wallpaper',
-    title: 'Pazia — Quick Wallpaper HD & 4K',
-    description:
-      'Production wallpaper personalization app published on Google Play. Delivers curated HD/4K photography, instant one-tap home/lock screen application, smart tagging, and local favorites.',
-    category: 'Mobile',
-    language: 'Kotlin',
-    tags: ['Android', 'Google Play', 'Material You', 'Kotlin', 'Pexels API'],
-    githubUrl: 'https://github.com/Dr-Rank1/Quick-wallpaper',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.rank.quickwallpaper',
-    featured: true,
-  },
-  {
-    id: 'tempbox-playstore',
-    name: 'Temporary-email',
-    title: 'TempBox — Disposable Temp Mail',
-    description:
-      'Live disposable temporary email client published on Google Play. Instant inbox generation with zero registration, live auto-sync, push notifications, and private attachment handling.',
-    category: 'Mobile',
-    language: 'Kotlin',
-    tags: ['Android', 'Google Play', 'Kotlin', 'Coroutines', 'Privacy Tech'],
-    githubUrl: 'https://github.com/Dr-Rank1/Temporary-email',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.rank.tempbox',
     featured: true,
   },
   {
@@ -367,6 +369,18 @@ export default function Projects() {
       }
 
       return true
+    }).sort((a, b) => {
+      // Pin live Google Play apps to the very top
+      const aIsPlay = a.playStoreUrl ? 1 : 0
+      const bIsPlay = b.playStoreUrl ? 1 : 0
+      if (aIsPlay !== bIsPlay) return bIsPlay - aIsPlay
+
+      // Next prioritize featured projects
+      const aFeat = a.featured ? 1 : 0
+      const bFeat = b.featured ? 1 : 0
+      if (aFeat !== bFeat) return bFeat - aFeat
+
+      return 0
     })
   }, [projects, activeCategory, activeLang, searchQuery])
 
