@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [{ url: '/photo.png', width: 576, height: 1312, alt: 'Ian Gicheha Mbae' }],
   },
+  icons: {
+    icon: '/icon.png',
+  },
 }
 
 export default function RootLayout({
