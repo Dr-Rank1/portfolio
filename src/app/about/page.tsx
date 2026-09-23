@@ -96,7 +96,7 @@ export default function About() {
 
               {/* Google Play Card */}
               <div className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-surface border border-border/60">
-                <FaGooglePlay className="text-emerald-500 shrink-0" size={16} />
+                <FaGooglePlay className="text-primary shrink-0" size={16} />
                 <div className="text-sm">
                   <p className="font-semibold text-foreground">Published Developer</p>
                   <p className="text-muted text-xs">Google Play Store</p>
@@ -105,7 +105,7 @@ export default function About() {
                   href="https://play.google.com/store/apps/developer?id=Dr_Rank."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto text-xs px-3 py-1 bg-dark rounded-md border border-border/50 text-emerald-500 hover:text-foreground transition-colors font-medium"
+                  className="ml-auto text-xs px-3 py-1 bg-dark rounded-md border border-border/50 text-primary hover:text-foreground transition-colors font-medium"
                 >
                   Explore Apps
                 </a>

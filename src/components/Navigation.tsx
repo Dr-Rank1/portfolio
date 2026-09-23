@@ -43,7 +43,7 @@ export const Navigation = () => {
           href="/"
           className="group text-base font-semibold tracking-tight flex items-center gap-2.5"
         >
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-emerald-600 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
+          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
             IM
           </span>
           <div className="flex flex-col">

@@ -79,8 +79,8 @@ export default function Contact() {
           <Reveal delay={100} className="lg:col-span-5 space-y-6">
             <div className="bg-surface/80 border border-border/60 rounded-2xl p-6 space-y-5">
               <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-semibold mb-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold mb-2 border border-cyan-500/20">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                   Currently Accepting Inquiries
                 </div>
                 <h2 className="text-lg font-bold text-foreground">Direct Reachout</h2>
@@ -139,7 +139,7 @@ export default function Contact() {
                     href="https://play.google.com/store/apps/developer?id=Dr_Rank."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-lg bg-dark text-emerald-500 hover:text-emerald-400 border border-border/40"
+                    className="p-1.5 rounded-lg bg-dark text-cyan-400 hover:text-cyan-300 border border-border/40"
                     aria-label="Google Play"
                   >
                     <FaGooglePlay size={13} />

@@ -66,7 +66,7 @@ export default function Home() {
           <div className="lg:col-span-7 space-y-6">
             <Reveal>
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface border border-border/70 text-xs shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                 <span className="text-muted font-medium">Available for Software Roles &amp; High-Impact Projects</span>
               </div>
             </Reveal>
@@ -74,7 +74,7 @@ export default function Home() {
             <Reveal delay={100}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground">
                 Crafting Scalable Backends &amp;{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-secondary">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-cyan-400">
                   Native Mobile Apps
                 </span>
               </h1>
@@ -154,7 +154,7 @@ export default function Home() {
             <Reveal delay={200}>
               <div className="relative group">
                 {/* Glow backdrop */}
-                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/30 to-emerald-500/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600/30 via-indigo-600/20 to-cyan-500/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity" />
 
                 <div className="relative w-72 sm:w-80 rounded-2xl bg-surface border border-border/80 overflow-hidden shadow-2xl p-3">
                   <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-dark">

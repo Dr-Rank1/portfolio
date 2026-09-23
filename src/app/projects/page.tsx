@@ -495,7 +495,7 @@ export default function Projects() {
                               href={project.playStoreUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 transition-colors"
+                              className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
                               title="View on Google Play"
                               aria-label="Google Play Store"
                             >

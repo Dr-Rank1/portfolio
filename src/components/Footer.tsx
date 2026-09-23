@@ -48,7 +48,7 @@ export const Footer = () => {
             href="https://play.google.com/store/apps/developer?id=Dr_Rank."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-8 h-8 rounded-lg bg-surface border border-border/50 flex items-center justify-center text-emerald-500 hover:text-emerald-400 hover:border-border transition-colors"
+            className="w-8 h-8 rounded-lg bg-surface border border-border/50 flex items-center justify-center text-cyan-400 hover:text-cyan-300 hover:border-border transition-colors"
             aria-label="Google Play Store"
           >
             <FaGooglePlay size={13} />
