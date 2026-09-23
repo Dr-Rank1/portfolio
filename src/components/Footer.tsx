@@ -45,7 +45,7 @@ export const Footer = () => {
             <FaLinkedin size={15} />
           </a>
           <a
-            href="https://play.google.com/store/apps/developer?id=Dr.+Rank"
+            href="https://play.google.com/store/apps/developer?id=Dr_Rank."
             target="_blank"
             rel="noopener noreferrer"
             className="w-8 h-8 rounded-lg bg-surface border border-border/50 flex items-center justify-center text-emerald-500 hover:text-emerald-400 hover:border-border transition-colors"

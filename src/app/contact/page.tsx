@@ -136,7 +136,7 @@ export default function Contact() {
                     <FaLinkedin size={14} />
                   </a>
                   <a
-                    href="https://play.google.com/store/apps/developer?id=Dr.+Rank"
+                    href="https://play.google.com/store/apps/developer?id=Dr_Rank."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-lg bg-dark text-emerald-500 hover:text-emerald-400 border border-border/40"
