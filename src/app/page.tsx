@@ -180,7 +180,7 @@ export default function Home() {
 
                     <div className="flex items-center gap-2 pt-2 border-t border-border/40 text-[11px] text-muted">
                       <a
-                        href="https://play.google.com/store/apps/developer?id=Dr_Rank."
+                        href="https://play.google.com/store/apps/developer?id=Dr_Rank"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-primary hover:underline"

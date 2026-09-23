@@ -102,7 +102,7 @@ export default function About() {
                   <p className="text-muted text-xs">Google Play Store</p>
                 </div>
                 <a
-                  href="https://play.google.com/store/apps/developer?id=Dr_Rank."
+                  href="https://play.google.com/store/apps/developer?id=Dr_Rank"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-auto text-xs px-3 py-1 bg-dark rounded-md border border-border/50 text-primary hover:text-foreground transition-colors font-medium"
