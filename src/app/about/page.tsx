@@ -181,7 +181,7 @@ export default function About() {
                 {[
                   { n: '4+', l: 'Years Experience' },
                   { n: '30+', l: 'Active Repositories' },
-                  { n: '2', l: 'Live Play Store Apps' },
+                  { n: '4', l: 'Live Play Store Apps' },
                   { n: '100%', l: 'Clean Code Commitment' },
                 ].map((s) => (
                   <div key={s.l}>

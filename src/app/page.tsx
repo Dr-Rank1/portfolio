@@ -211,7 +211,7 @@ export default function Home() {
             {[
               { number: '4+', label: 'Years Engineering Experience', sub: 'Production software' },
               { number: '30+', label: 'Repositories on GitHub', sub: '@Dr-Rank1 profile' },
-              { number: '2', label: 'Google Play Apps Live', sub: 'Production published' },
+              { number: '4', label: 'Google Play Apps Live', sub: 'Production published' },
               { number: '15+', label: 'Web & Mobile Systems', sub: 'Shipped to users' },
             ].map((stat) => (
               <div
