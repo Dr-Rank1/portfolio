@@ -79,10 +79,6 @@ export default function Contact() {
           <Reveal delay={100} className="lg:col-span-5 space-y-6">
             <div className="bg-surface/80 border border-border/60 rounded-2xl p-6 space-y-5">
               <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold mb-2 border border-cyan-500/20">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                  Currently Accepting Inquiries
-                </div>
                 <h2 className="text-lg font-bold text-foreground">Direct Reachout</h2>
                 <p className="text-xs text-muted leading-relaxed mt-1">
                   Have a specific role or architecture question? Feel free to reach out directly via email, phone, or LinkedIn.

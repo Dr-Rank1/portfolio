@@ -97,17 +97,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             {/* Bio & Intro */}
             <div className="lg:col-span-8 space-y-6">
-              {/* Personal Location & Status */}
+              {/* Personal Location */}
               <Reveal>
-                <div className="flex flex-wrap items-center gap-3 text-xs text-muted">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface border border-border/70 text-foreground font-medium">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                    Available for work &amp; collaboration
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <FaMapMarkerAlt size={12} className="text-muted" />
-                    Nairobi, Kenya (UTC+3)
-                  </span>
+                <div className="flex items-center gap-2 text-xs text-muted">
+                  <FaMapMarkerAlt size={12} className="text-cyan-400" />
+                  <span>Nairobi, Kenya</span>
                 </div>
               </Reveal>
 
