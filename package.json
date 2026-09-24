@@ -2,6 +2,7 @@
   "name": "ian-portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Personal software engineering portfolio showcasing backend Python architectures, native Android (Jetpack Compose), and production Flutter applications.",
   "scripts": {
     "dev": "rm -rf .next && next dev",
     "build": "next build",
