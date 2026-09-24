@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-mauve-phi-56.vercel.app'),
+  metadataBase: new URL('https://ianmbae.vercel.app'),
   title: 'Ian Gicheha Mbae | Software Engineer (Python, Android, Flutter)',
   description:
     'Software Engineer based in Nairobi building scalable backend architectures with Python, Django, & FastAPI, and tactile native mobile apps with Android (Jetpack Compose) & Flutter.',
