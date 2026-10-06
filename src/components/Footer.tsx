@@ -5,9 +5,9 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border/50 py-10 bg-surface/30">
-      <div className="mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs text-muted">
+    <footer className="border-t border-border/50 py-8 sm:py-10 bg-surface/30">
+      <div className="mx-auto px-4 sm:px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-4 text-xs text-muted">
           <span className="font-semibold text-foreground">Ian Gicheha Mbae</span>
           <span className="hidden sm:inline">·</span>
           <span>Software Engineer &amp; Mobile Developer</span>
@@ -16,12 +16,12 @@ export const Footer = () => {
         </div>
 
         {/* Quick Nav Links */}
-        <div className="flex items-center gap-4 text-xs text-muted">
-          <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-          <Link href="/projects" className="hover:text-foreground transition-colors">Projects</Link>
-          <Link href="/skills" className="hover:text-foreground transition-colors">Skills</Link>
-          <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
-          <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-xs text-muted">
+          <Link href="/" className="hover:text-foreground transition-colors px-1 py-1">Home</Link>
+          <Link href="/projects" className="hover:text-foreground transition-colors px-1 py-1">Projects</Link>
+          <Link href="/skills" className="hover:text-foreground transition-colors px-1 py-1">Skills</Link>
+          <Link href="/about" className="hover:text-foreground transition-colors px-1 py-1">About</Link>
+          <Link href="/contact" className="hover:text-foreground transition-colors px-1 py-1">Contact</Link>
         </div>
 
         {/* Social Icons */}

@@ -41,8 +41,8 @@ export const SpotifyWidget = () => {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
-      <div className="flex items-center gap-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl px-4 py-3 shadow-lg backdrop-blur-md">
+    <div className="fixed bottom-3 left-3 sm:bottom-6 sm:left-6 z-40 max-w-[calc(100vw-24px)]">
+      <div className="flex items-center gap-2.5 sm:gap-3 bg-[var(--surface)] border border-[var(--border)] rounded-xl px-3 py-2 sm:px-4 sm:py-3 shadow-lg backdrop-blur-md">
         <button
           onClick={() => setVisible(false)}
           className="absolute -top-2 -right-2 w-5 h-5 bg-[var(--border)] rounded-full flex items-center justify-center text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"

@@ -30,18 +30,30 @@ export const Navigation = () => {
     setIsMobileMenuOpen(false)
   }, [pathname])
 
+  // Prevent background body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-dark/85 backdrop-blur-xl border-b border-border/60 shadow-lg shadow-black/5'
-          : 'bg-transparent'
+        isScrolled || isMobileMenuOpen
+          ? 'bg-dark/95 backdrop-blur-xl border-b border-border/70 shadow-sm'
+          : 'bg-dark/60 backdrop-blur-md md:bg-transparent border-b border-border/30 md:border-transparent'
       }`}
     >
-      <div className="mx-auto px-6 max-w-7xl flex items-center justify-between h-16">
+      <div className="mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between h-16">
         <Link
           href="/"
-          className="group text-base font-semibold tracking-tight flex items-center gap-2.5"
+          className="group text-base font-semibold tracking-tight flex items-center gap-2.5 active:scale-95 transition-transform"
         >
           <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
             IM
@@ -83,7 +95,7 @@ export const Navigation = () => {
           })}
         </nav>
 
-        {/* Right CTA / Controls */}
+        {/* Right CTA / Controls (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
           <a
@@ -104,74 +116,76 @@ export const Navigation = () => {
           </Link>
         </div>
 
-        {/* Mobile menu trigger */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* Mobile controls */}
+        <div className="md:hidden flex items-center gap-1.5">
           <ThemeToggle />
           <button
-            className="w-9 h-9 rounded-lg border border-border/50 bg-surface flex items-center justify-center text-foreground"
+            className="w-10 h-10 rounded-lg border border-border/70 bg-surface flex items-center justify-center text-foreground active:scale-95 transition-transform"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-1.5 w-4">
               <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-                className="block w-full h-[1.5px] bg-current origin-center"
+                animate={isMobileMenuOpen ? { rotate: 45, y: 5.5 } : { rotate: 0, y: 0 }}
+                className="block w-full h-[1.75px] bg-current origin-center"
               />
               <motion.span
                 animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block w-full h-[1.5px] bg-current"
+                className="block w-full h-[1.75px] bg-current"
               />
               <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
-                className="block w-full h-[1.5px] bg-current origin-center"
+                animate={isMobileMenuOpen ? { rotate: -45, y: -5.5 } : { rotate: 0, y: 0 }}
+                className="block w-full h-[1.75px] bg-current origin-center"
               />
             </div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Overlay / Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-border/60 bg-dark/95 backdrop-blur-2xl overflow-hidden"
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="md:hidden border-b border-border/80 bg-dark/98 backdrop-blur-2xl shadow-2xl overflow-hidden"
           >
-            <div className="mx-auto px-6 py-4 flex flex-col gap-1.5">
+            <div className="px-5 py-5 flex flex-col gap-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center justify-between ${
+                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-between ${
                       isActive
-                        ? 'text-primary bg-primary/10 font-semibold'
-                        : 'text-muted hover:text-foreground hover:bg-surface'
+                        ? 'text-white bg-primary font-semibold shadow-sm shadow-primary/30'
+                        : 'text-foreground bg-surface/70 hover:bg-surface border border-border/50'
                     }`}
                   >
                     <span>{item.name}</span>
-                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-primary" />}
+                    <span className="text-xs opacity-60 font-mono">→</span>
                   </Link>
                 )
               })}
-              <div className="pt-3 mt-2 border-t border-border/50 flex gap-2">
+
+              <div className="pt-3 mt-1 border-t border-border/50 grid grid-cols-2 gap-2">
                 <Link
                   href="/contact"
-                  className="flex-1 text-center py-2.5 bg-primary text-white text-xs font-semibold rounded-lg shadow-sm"
+                  className="w-full text-center py-3 bg-primary text-white text-xs font-semibold rounded-xl shadow-sm shadow-primary/20 active:scale-95 transition-transform"
                 >
-                  Hire Me / Contact
+                  Contact
                 </Link>
                 <a
                   href="https://github.com/Dr-Rank1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 bg-surface border border-border/50 rounded-lg flex items-center justify-center text-muted hover:text-foreground"
-                  aria-label="GitHub"
+                  className="w-full py-3 bg-surface border border-border/60 rounded-xl flex items-center justify-center gap-2 text-xs font-semibold text-foreground active:scale-95 transition-transform"
                 >
-                  <FaGithub size={16} />
+                  <FaGithub size={15} />
+                  GitHub
                 </a>
               </div>
             </div>

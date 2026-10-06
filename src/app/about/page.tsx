@@ -49,25 +49,25 @@ const competencies = [
 
 export default function About() {
   return (
-    <section className="min-h-screen pt-28 pb-24">
-      <div className="mx-auto px-6 max-w-7xl">
+    <section className="min-h-screen pt-20 sm:pt-28 pb-16 sm:pb-24">
+      <div className="mx-auto px-4 sm:px-6 max-w-7xl">
         <Reveal>
-          <div className="max-w-3xl mx-auto mb-14 text-center">
+          <div className="max-w-3xl mx-auto mb-10 sm:mb-14 text-center">
             <p className="section-title">About Me</p>
-            <h1 className="heading text-balance">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground text-balance">
               Building Software that is <span className="text-primary">Reliable, Fast &amp; Thoughtful</span>
             </h1>
-            <p className="text-muted mt-3 text-sm md:text-base leading-relaxed">
+            <p className="text-muted mt-3 text-xs sm:text-sm md:text-base leading-relaxed">
               Software Engineer based in Nairobi with over 4 years of hands-on experience building systems from ground up.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 items-start">
           {/* Left — photo + info */}
           <Reveal delay={100} className="lg:col-span-2">
-            <div className="space-y-4">
-              <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-2xl overflow-hidden border border-border/70 shadow-lg bg-surface">
+            <div className="space-y-4 max-w-sm mx-auto lg:max-w-none">
+              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-border/70 shadow-lg bg-surface">
                 <Image
                   src="/photo.png"
                   alt="Ian Gicheha Mbae"
@@ -117,10 +117,10 @@ export default function About() {
           <Reveal delay={200} className="lg:col-span-3">
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold mb-4 text-foreground">
+                <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-foreground leading-snug">
                   Full-Cycle Software Engineer with Passion for Craftsmanship
                 </h2>
-                <div className="space-y-4 text-muted text-sm sm:text-base leading-relaxed">
+                <div className="space-y-3 sm:space-y-4 text-muted text-xs sm:text-base leading-relaxed">
                   <p>
                     I&apos;m <span className="text-foreground font-semibold">Ian Gicheha Mbae</span>.
                     I focus on the entire lifecycle of software delivery — designing resilient backend architectures, crafting seamless native user interfaces, and shipping finished applications to real users.
@@ -142,11 +142,11 @@ export default function About() {
               </div>
 
               {/* Pillars */}
-              <div className="grid sm:grid-cols-2 gap-3.5">
+              <div className="grid sm:grid-cols-2 gap-3 sm:gap-3.5">
                 {highlights.map((item) => (
                   <div
                     key={item.title}
-                    className="p-4 rounded-xl bg-surface border border-border/60 hover:border-primary/40 transition-colors"
+                    className="p-3.5 sm:p-4 rounded-xl bg-surface border border-border/60 hover:border-primary/40 transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
@@ -162,11 +162,11 @@ export default function About() {
               </div>
 
               {/* Engineering Competencies checklist */}
-              <div className="p-5 rounded-2xl bg-surface/60 border border-border/60 space-y-3">
+              <div className="p-4 sm:p-5 rounded-2xl bg-surface/60 border border-border/60 space-y-3">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-primary">
                   Engineering Principles &amp; Practices
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-2.5">
+                <div className="grid sm:grid-cols-2 gap-2 sm:gap-2.5">
                   {competencies.map((comp) => (
                     <div key={comp} className="flex items-start gap-2 text-xs text-muted">
                       <FaCheck className="text-primary shrink-0 mt-0.5" size={10} />
@@ -177,7 +177,7 @@ export default function About() {
               </div>
 
               {/* Stats Bar */}
-              <div className="flex flex-wrap gap-8 pt-6 border-t border-border/60">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 pt-5 sm:pt-6 border-t border-border/60">
                 {[
                   { n: '4+', l: 'Years Experience' },
                   { n: '30+', l: 'Active Repositories' },
@@ -195,7 +195,7 @@ export default function About() {
               <div className="pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark shadow-md shadow-primary/20 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark shadow-md shadow-primary/20 transition-all"
                 >
                   <FaBriefcase size={12} />
                   Discuss an Opportunity

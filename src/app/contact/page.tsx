@@ -60,24 +60,24 @@ export default function Contact() {
   }
 
   return (
-    <section className="min-h-screen pt-28 pb-24">
-      <div className="mx-auto px-6 max-w-7xl">
+    <section className="min-h-screen pt-20 sm:pt-28 pb-16 sm:pb-24">
+      <div className="mx-auto px-4 sm:px-6 max-w-7xl">
         <Reveal>
-          <div className="max-w-3xl mx-auto mb-14 text-center">
+          <div className="max-w-3xl mx-auto mb-10 sm:mb-14 text-center">
             <p className="section-title">Get In Touch</p>
-            <h1 className="heading">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground text-balance">
               Let&apos;s Build Something <span className="text-primary">Exceptional</span>
             </h1>
-            <p className="text-muted mt-3 text-sm md:text-base leading-relaxed">
+            <p className="text-muted mt-3 text-xs sm:text-sm md:text-base leading-relaxed">
               Open to full-time engineering roles, technical contract consultations, and high-impact software projects.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid lg:grid-cols-12 gap-10 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 max-w-5xl mx-auto">
           {/* Left Column: Direct Links & Status */}
           <Reveal delay={100} className="lg:col-span-5 space-y-6">
-            <div className="bg-surface/80 border border-border/60 rounded-2xl p-6 space-y-5">
+            <div className="bg-surface/80 border border-border/60 rounded-2xl p-4 sm:p-6 space-y-5">
               <div>
                 <h2 className="text-lg font-bold text-foreground">Direct Reachout</h2>
                 <p className="text-xs text-muted leading-relaxed mt-1">
@@ -150,9 +150,9 @@ export default function Contact() {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="bg-surface/90 border border-border/60 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4"
+              className="bg-surface/90 border border-border/60 rounded-2xl p-4 sm:p-8 shadow-sm space-y-4"
             >
-              <h3 className="text-lg font-bold text-foreground">Send a Message</h3>
+              <h3 className="text-base sm:text-lg font-bold text-foreground">Send a Message</h3>
               <p className="text-xs text-muted leading-relaxed -mt-2">
                 Fill in the details below to start a conversation directly in your email client.
               </p>

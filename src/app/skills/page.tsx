@@ -142,24 +142,24 @@ export default function Skills() {
   const totalSkills = categories.reduce((acc, c) => acc + c.skills.length, 0)
 
   return (
-    <section className="min-h-screen pt-28 pb-24">
-      <div className="mx-auto px-6 max-w-7xl">
+    <section className="min-h-screen pt-20 sm:pt-28 pb-16 sm:pb-24">
+      <div className="mx-auto px-4 sm:px-6 max-w-7xl">
         <Reveal>
-          <div className="max-w-3xl mx-auto mb-14 text-center">
+          <div className="max-w-3xl mx-auto mb-10 sm:mb-14 text-center">
             <p className="section-title">Technical Expertise</p>
-            <h1 className="heading">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground text-balance">
               Skills &amp; <span className="text-primary">Capabilities</span>
             </h1>
-            <p className="text-muted mt-3 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-muted mt-3 text-xs sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed">
               A comprehensive toolkit honed across {totalSkills} technologies, frameworks, and engineering methodologies.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {categories.map((category, i) => (
             <Reveal key={category.title} delay={i * 60}>
-              <div className="bg-surface/90 border border-border/60 hover:border-primary/40 rounded-2xl p-6 h-full flex flex-col justify-between transition-colors shadow-sm">
+              <div className="bg-surface/90 border border-border/60 hover:border-primary/40 rounded-2xl p-4 sm:p-6 h-full flex flex-col justify-between transition-colors shadow-sm">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center shrink-0">
